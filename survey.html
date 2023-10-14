@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        function formSubmission(event) {
+            event.preventDefault();
+            var firstName = document.getElementById("fname").value;
+            var lastName = document.getElementById("lname").value;
+            var DOB = document.getElementById("dob").value;
+            var country = document.getElementById("country").value;
+            var profession = document.getElementById("profession").value;
+            var number = document.getElementById("number").value;
+            var email = document.getElementById("email").value;
+
+
+            var gender;
+            
+            if (document.getElementById('female').checked) {
+                gender = 'Female';
+            } else if (document.getElementById('male').checked) {
+                gender = 'Male';
+            } else {
+                gender = 'Not specified';
+            }
+    
+            alert('First Name: ${firstName}\nLast Name: ${lastName}\nGender: ${gender}\nDOB: ${DOB}\nCountry: ${country}\nProfession: ${profession}\nNumber: ${number}\nEmail: ${email}');
+        };
+    </script>
+    
+    <style>
+        body
+        {
+            font-family: Arial, sans-serif;
+            background-color: #3c10eb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .h1{
+        background-color: #f1f1f9;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 400px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+            <div style="text-align: center; color: #f1f1f9;">
+                <h1>Customer Survey Form</h1>
+            </div>
+<div class="h1">
+    <form id="myForm" onsubmit="formSubmission(event)">
+    <label for="fname">First Name:</label>
+    <input type="text" name="fname" id="fname">
+    <br>
+    <br>
+    <label for="lname">last Name:</label>
+    <input type="text" name="lname" id="lname">
+    <br>
+    <br>
+    <label for="lname">Date Of Birth:</label>
+    <input type="Date" name="" id="dob">
+    <br>
+    <br>
+    <label for="country">Country:</label>
+    <select  id="country">
+        <option value="india">India</option>
+        <option value="Australia">Australia</option>
+        <option value="US">US</option>
+        <option value="Uk">UK</option>
+        <option value="Canada">Canada</option>
+    </select>
+    <br>
+    <br>
+    <label for="gender">Gender:</label>
+    <input type="radio" id="male" name="gender" value="male" checked>Male
+    <input type="radio" id="female" name="gender" value="female"> Female
+    <br>
+    <br>
+    <label for="profession">profession:</label>
+    <input type="text" id="profession" >
+    <br>
+    <br>
+    <label for="email">email:</label>
+    <input type="email" id="email">
+    <br>
+    <br>
+    <label for="number">Mobile Number:</label>
+    <input type="number" id="number">
+    <br>
+    <br>
+    <input style="background-color: #3c10eb;color: #f1f1f9;" type="submit" value="submit" id="submitbutton"> 
+    <input type="reset">
+       
+ </form>
+</div>
+</body>
+</html>
